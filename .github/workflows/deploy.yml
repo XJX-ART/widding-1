@@ -1,4 +1,4 @@
-name: Deploy Stardew Wedding
+name: Deploy Exact Wedding ZIP
 on:
   push:
     branches: [main]
@@ -12,50 +12,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build full Stardew wedding site
+      - name: Build from original template and exact ZIP files
         run: |
           rm -rf site
           git clone --depth 1 https://github.com/tutouxiaozhou/stardew-wedding-template.git site
           rm -rf site/.git
-          python3 - <<'PY'
+          python3 - <<'PY2'
+          import base64
           from pathlib import Path
-          app = Path('site/app.js')
-          s = app.read_text(encoding='utf-8')
-          s = s.replace("groom: '新郎姓名'", "groom: '黄员超'")
-          s = s.replace("bride: '新娘姓名'", "bride: '谢家璇'")
-          s = s.replace("groomLatin: 'GROOM'", "groomLatin: 'HUANG'")
-          s = s.replace("brideLatin: 'BRIDE'", "brideLatin: 'XIE'")
-          s = s.replace("weddingDate: '2030-10-01T00:00:00+08:00'", "weddingDate: '2026-11-01T11:08:00+08:00'")
-          s = s.replace("dateDot: '2030 · 10 · 01'", "dateDot: '2026 · 11 · 01'")
-          s = s.replace("dateCn: '2030年10月1日 · 星期二'", "dateCn: '2026年11月1日 · 丙午年九月廿三 · 周日'")
-          s = s.replace("calendarMonth: 'OCT'", "calendarMonth: 'NOV'")
-          s = s.replace("calendarYear: '2030'", "calendarYear: '2026'")
-          s = s.replace("venue: '示例市幸福区星露谷宴会厅'", "venue: '无为悦华酒店 · 1F 梦幻乐园宴会厅'")
-          s = s.replace("venueShort: '星露谷宴会厅'", "venueShort: '无为悦华酒店'")
-          start = s.index('  schedule: [')
-          end = s.index('  ],', start) + 4
-          schedule = '''  schedule: [\n    { label: '迎宾签到', time: '11:08', description: '共叙旧情，收下今日喜气' },\n    { label: '婚礼仪式', time: '12:08', description: '缘定今生，礼成白首' },\n    { label: '喜宴开席', time: '12:28', description: '举杯同庆，共享良辰' },\n  ],'''
-          s = s[:start] + schedule + s[end:]
-          app.write_text(s, encoding='utf-8')
-          page = Path('site/index.html')
-          h = page.read_text(encoding='utf-8')
-          replacements = {
-            '新郎姓名与新娘姓名的星露谷风格婚礼邀请函｜2030.10.01': '黄员超与谢家璇的星露谷风格婚礼邀请函｜2026.11.01',
-            '新郎姓名 & 新娘姓名｜Stardew Wedding': '黄员超 & 谢家璇｜Stardew Wedding',
-            '新郎姓名 × 新娘姓名': '黄员超 × 谢家璇',
-            '新郎姓名 & 新娘姓名': '黄员超 & 谢家璇',
-            '2030.10.01': '2026.11.01',
-            '2030 · 10 · 01': '2026 · 11 · 01',
-            '2030年10月1日 · 星期二': '2026年11月1日 · 丙午年九月廿三 · 周日',
-            '示例市幸福区星露谷宴会厅': '无为悦华酒店 · 1F 梦幻乐园宴会厅',
+          files = {
+            'index.html': 'PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9InpoLUNOIj4KICA8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04IiAvPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAsIHZpZXdwb3J0LWZpdC1jb3Zlcj0iIC8+CiAgICA8bWV0YSBuYW1lPSJ0aGVtZS1jb2xvciIgY29udGVudD0iIzE3MjQ1ZiIgLz4KICAgIDxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSLmiqXlhaznq5TmlYjovbTlvbHlnZCBY5qW8eWJvcmF3c2V0dGluZyBzdGFyZHJldyB3ZWRkaW5nIHlvdXJhbW9udCBzaW5nIGxvbmcgMjAyNi4xMS4wMSIgLz4KICAgIDxtZXRhIHByb3BlcnR5PSJvZzp0eXBlIiBjb250ZW50PSJ3ZWJzaXRlIiAvPgogICAgPG1ldGEgcHJvcGVydHk9Im9nOnRpdGxlIiBjb250ZW50PSLmiqXlhaznq5TmlYjovbTlpb2VuIGd1d2VkZGluZyIgLz4KICAgIDxtZXRhIHByb3BlcnR5PSJvZzpkZXNjcmlwdGlvbiIgY29udGVudD0iIiAvPgogICAgPGxpbmsgcmVsPSJwcmVsb2FkIiBocmVmPSIvYXNzZXRzL2ZvbnRzL2Z1c2lvbi1waXhlbC0xMnB4LXByb3BvcnRpb25hbC16aC1oYW5zLndvZmYyIiBhcz0iZm9udCIgdHlwZT0iZm9udC93b2ZmMiIgY3Jvc3Nvcmk+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii9zdHlsZS5jc3MiIC8+CiAgICA8dGl0bGU+6L+Z5Yue6LaKICYg6K6K5a625p2h44CRU3RhcmRldyBXZWRkaW5nPC90aXRsZT4KICA8L2hlYWQ+CiAgPGJvZHk+CiAgICA8ZGl2IGlkPSJhcHAiPjwvZGl2PgogICAgPHNjcmlwdCB0eXBlPSJtb2R1bGUiIHNyYz0iL2FwcC5qcyI+PC9zY3JpcHQ+CiAgPC9ib2R5Pgo8L2h0bWw+Cg==',
+            'assets/pixel-couple.svg': 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+PHBhdGggZmlsbD0iI0ZmYzY2OCIIGQ9Ik0yMCAxMDBoMTIwdjIwaC0xMjB6Ii8+PC9zdmc+',
+            'assets/share-cover.svg': 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYzMCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIiBmaWxsPSIjMTcyNDVmIi8+PHRleHQgeD0iNjAwIiB5PSIzMjAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7miqXlhaznq5QgJiDovbTlpb2VuPC90ZXh0Pjwvc3ZnPg=='
           }
-          for a,b in replacements.items(): h = h.replace(a,b)
-          h = h.replace('秋日吉期，我们在星露谷等你赴约。2026.11.01 见。', '2026年11月1日，我们在无为悦华酒店等你赴约。')
-          h = h.replace('春去秋来，我们决定在星露谷举办一场婚礼。诚挚邀请你，来见证这一份丰收般的幸福。', '桃之夭夭，灼灼其华。之子于归，宜其室家。人海茫茫，两颗孤独立的灵魂在时间的坐标里精准交汇。承蒙岁月厚爱，黄员超与谢家璇自此同温一盏茶，共度四季风。承蒙岁月不弃，两姓联姻，一堂缔约，良缘永结。在这良辰美景的日子里，您的到来，将为这场婚礼赋予最圆满的意义。我们备下美酒佳肴，只待与您共襄盛举，同沾喜气。')
-          h = h.replace('秋风暖，星河长', '岁月是一场漫长的旅行，而欢聚是其中最美的风景。')
-          h = h.replace('</div>\n        <footer>', '</div>\n        <p class="ending-thanks">我们人生的拼图，因为有了你们的拼凑才算得上一句“完美”。无论是从前的青葱岁月，还是未来的柴米油盐，都希望能与你们一同分享。请带上100%的好心情，带上你们最真挚的祝福，来赴这场关于爱与欢乐的盛宴吧！<br />黄员超 & 谢家璇 携手敬邀｜我们，不见不散！</p>\n        <footer>')
-          page.write_text(h, encoding='utf-8')
-          PY
+          for path, data in files.items():
+              p=Path('site')/path
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_bytes(base64.b64decode(data))
+          PY2
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
@@ -66,7 +40,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Wait for GitHub Pages branch deployment to finish
-        run: sleep 90
       - id: deployment
         uses: actions/deploy-pages@v4
