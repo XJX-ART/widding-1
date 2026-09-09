@@ -1,0 +1,42 @@
+name: Deploy Stardew Wedding
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          rm -rf site
+          git clone --depth 1 https://github.com/tutouxiaozhou/stardew-wedding-template.git site
+          rm -rf site/.git
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('site/app.js')
+          s=p.read_text()
+          reps={"groom: '新郎姓名'":"groom: '黄员超'","bride: '新娘姓名'":"bride: '谢家璇'","groomLatin: 'GROOM'":"groomLatin: 'HUANG'","brideLatin: 'BRIDE'":"brideLatin: 'XIE'","weddingDate: '2030-10-01T00:00:00+08:00'":"weddingDate: '2026-11-01T11:08:00+08:00'","dateDot: '2030 · 10 · 01'":"dateDot: '2026 · 11 · 01'","dateCn: '2030年10月1日 · 星期二'":"dateCn: '2026年11月1日 · 丙午年九月廿三 · 周日'","calendarMonth: 'OCT'":"calendarMonth: 'NOV'","calendarYear: '2030'":"calendarYear: '2026'","venue: '示例市幸福区星露谷宴会厅'":"venue: '无为悦华酒店 · 1F 梦幻乐园宴会厅'","venueShort: '星露谷宴会厅'":"venueShort: '无为悦华酒店'","{ label: '签到', time: '待确认', description: '领取今日任务，与老朋友相见' }":"{ label: '迎宾签到', time: '11:08', description: '共叙旧情，收下今日喜气' }","{ label: '仪式', time: '待确认', description: '见证拥抱、誓言与交换戒指' }":"{ label: '婚礼仪式', time: '12:08', description: '缘定今生，礼成白首' }","{ label: '喜宴', time: '待确认', description: '共享一场丰盛的秋日宴席' }":"{ label: '喜宴开席', time: '12:28', description: '举杯同庆，共享良辰' }"}
+          for a,b in reps.items(): s=s.replace(a,b)
+          p.write_text(s)
+          p=Path('site/index.html'); s=p.read_text()
+          for a,b in {"新郎姓名与新娘姓名":"黄员超与谢家璇","新郎姓名 & 新娘姓名":"黄员超 & 谢家璇","新郎姓名 × 新娘姓名":"黄员超 × 谢家璇","2030.10.01":"2026.11.01","2030 · 10 · 01":"2026 · 11 · 01","2030年10月1日 · 星期二":"2026年11月1日 · 丙午年九月廿三 · 周日","示例市幸福区星露谷宴会厅":"无为悦华酒店 · 1F 梦幻乐园宴会厅"}.items(): s=s.replace(a,b)
+          p.write_text(s)
+          PY
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
