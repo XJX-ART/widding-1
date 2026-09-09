@@ -1,31 +1,124 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#7b1720">
-<meta name="description" content="é»„å‘˜è¶…ä¸è°¢å®¶ç’‡ï½œ2026å¹´11æœˆ1æ—¥ï½œæ— ä¸ºæ‚¦åé…’åº— Â· 1F æ¢¦å¹»ä¹å›­å®´ä¼šå…">
-<meta property="og:title" content="é»„å‘˜è¶… & è°¢å®¶ç’‡ï½œåƒç´ å©šç¤¼é‚€è¯·å‡½">
-<meta property="og:description" content="è‰¯è¾°å·²è‡³ï¼Œæˆ‘ä»¬åœ¨åƒç´ è°·ç­‰ä½ èµ´çº¦ã€‚2026.11.01 è§ã€‚">
-<title>é»„å‘˜è¶… & è°¢å®¶ç’‡ï½œåƒç´ å©šç¤¼é‚€è¯·å‡½</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
-:root{--red:#781820;--red2:#a52b32;--gold:#e7bf69;--cream:#fff7df;--ink:#3b211c;--green:#395b43;--paper:#f5e7c2}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#171b22;color:var(--ink);font-family:'Noto Serif SC',serif;line-height:1.8}.wrap{max-width:960px;margin:auto;background:var(--cream);overflow:hidden;box-shadow:0 0 50px #0008}.hero{min-height:760px;position:relative;display:grid;place-items:center;text-align:center;padding:60px 20px;background:linear-gradient(#152b45cc,#4b2524aa),url('https://raw.githubusercontent.com/tutouxiaozhou/stardew-wedding-template/main/assets/hero-mountains.webp') center/cover;image-rendering:auto}.hero:after{content:'âœ¦ã€€å›ã€€âœ¦ã€€å›ã€€âœ¦';position:absolute;top:34px;color:#ffe9a6;font-size:18px;letter-spacing:5px}.hero .box{position:relative;z-index:2;color:#fff7df;text-shadow:3px 3px 0 #482022}.eyebrow{font-size:14px;letter-spacing:7px;color:#f8d980}.title{font-size:clamp(42px,8vw,76px);line-height:1.1;margin:15px 0;font-weight:900;letter-spacing:4px}.names{font-size:clamp(28px,5vw,48px);font-weight:900;color:#ffe6a0}.date{font-size:22px;letter-spacing:5px;margin:18px 0}.couple{width:min(300px,70vw);margin:20px auto 10px;filter:drop-shadow(5px 5px 0 #402020)}.pixel{image-rendering:pixelated}.enter{display:inline-block;margin-top:22px;padding:10px 24px;background:var(--red2);border:4px solid #f2cf76;box-shadow:5px 5px 0 #421820;color:#fff7df;text-decoration:none;font-weight:700}.section{padding:75px 7%;position:relative}.section:nth-child(even){background:#f0dfb8}.heading{text-align:center;margin-bottom:32px}.heading small{color:var(--red2);letter-spacing:5px}.heading h2{font-size:34px;margin:4px 0;color:var(--red);font-weight:900}.card{background:#fff8e5;border:5px solid var(--red);box-shadow:8px 8px 0 #bd9b5b;padding:38px;position:relative}.card:before,.card:after{content:'å›';position:absolute;color:#c99342;font-size:32px;opacity:.8}.card:before{left:14px;top:8px}.card:after{right:14px;bottom:8px}.lead{text-align:center;font-size:20px}.lead em{display:block;font-style:normal;font-size:27px;font-weight:900;color:var(--red);margin-bottom:16px}.info{display:grid;gap:14px;margin-top:28px}.row{display:grid;grid-template-columns:100px 1fr;gap:12px;border-top:2px dashed #c9ad76;padding-top:12px}.row b{color:var(--red)}.calendar{margin:30px auto 0;max-width:440px;text-align:center;background:#6f1720;color:#fff4cf;border:5px solid #d6aa52;padding:20px;box-shadow:8px 8px 0 #3f2020}.calendar .big{font-size:64px;line-height:1;font-weight:900;color:#ffe19a}.schedule{display:grid;gap:14px;margin-top:25px}.item{display:grid;grid-template-columns:90px 1fr;align-items:center;background:#fff8e5;border:3px solid #b48a45;padding:12px 16px}.time{font-size:24px;color:var(--red);font-weight:900}.quest{background:#314f3b;color:#fff5d9}.quest .heading h2,.quest .heading small{color:#ffe09a}.quest .card{background:#49694d;border-color:#e6c56d;box-shadow:8px 8px 0 #1e3025}.quest ul{margin:20px 0;padding-left:24px}.scene{padding:0;overflow:hidden}.scene img{display:block;width:100%;height:auto}.scene-note{padding:25px;text-align:center;background:#6d171f;color:#ffe9ad;font-size:19px}.map{position:relative;overflow:hidden;border:5px solid var(--red);box-shadow:8px 8px 0 #bd9b5b}.map img{width:100%;display:block}.pin{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);background:var(--red);color:#fff4cf;border:3px solid #f1ce70;padding:8px 15px;font-weight:900;white-space:nowrap}.end{background:linear-gradient(#69151dcc,#3b171d),url('https://raw.githubusercontent.com/tutouxiaozhou/stardew-wedding-template/main/assets/marriage-scene.webp') center/cover;text-align:center;color:#fff1c8;padding:100px 20px}.end h2{font-size:clamp(38px,7vw,68px);line-height:1.35;margin:10px}.end .couple{width:220px}.footer{padding:24px;text-align:center;font-size:13px;color:#e5d6b0;background:#1f242a}.music{position:fixed;right:18px;bottom:18px;width:54px;height:54px;border:3px solid #f0ce77;background:#7b1720;color:#fff3c8;font-size:23px;z-index:9;cursor:pointer;box-shadow:4px 4px 0 #24171a}.top{position:fixed;left:18px;bottom:18px;width:54px;height:54px;border:3px solid #f0ce77;background:#314f3b;color:#fff3c8;z-index:9;cursor:pointer;box-shadow:4px 4px 0 #24171a}@media(max-width:600px){.section{padding:55px 5%}.card{padding:28px 20px}.row{grid-template-columns:76px 1fr}.item{grid-template-columns:78px 1fr}.hero{min-height:700px}.title{font-size:38px}.names{font-size:28px}}
-</style>
-</head>
-<body>
-<div class="wrap" id="top">
-<section class="hero"><div class="box"><div class="eyebrow">å‰æ—¥ Â· ä½³æœŸ Â· è‰¯è¾°ç¾æ™¯</div><h1 class="title">åƒç´ å©šç¤¼é‚€è¯·å‡½</h1><div class="names">é»„å‘˜è¶… Ã— è°¢å®¶ç’‡</div><img class="couple pixel" alt="ä¸­å¼å–œæœåƒç´ æ–°äºº" src="https://raw.githubusercontent.com/tutouxiaozhou/stardew-wedding-template/main/assets/marriage-abigail.png"><div class="date">2026 Â· 11 Â· 01</div><div>ä¸™åˆå¹´ä¹æœˆå»¿ä¸‰ Â· å‘¨æ—¥</div><a class="enter" href="#invite">â†“ã€€ç‚¹å‡»å¼€å¯å–œå¸–ã€€â†“</a></div></section>
-<section class="section" id="invite"><div class="heading"><small>THE WEDDING INVITATION</small><h2>å–œå¸–</h2></div><article class="card"><div class="lead"><em>é»„å‘˜è¶… & è°¢å®¶ç’‡</em>æ¡ƒä¹‹å¤­å¤­ï¼Œç¼ç¼å…¶åã€‚<br>ä¸¤é¢—æ¼‚æ³Šçš„çµé­‚ï¼ŒäºèŒ«èŒ«äººæµ·ç›¸é€¢ã€‚<br>æ‰¿è’™å²æœˆåšçˆ±ï¼Œè‡ªæ­¤åŒæ¸©ä¸€ç›èŒ¶ï¼Œå…±åº¦å››å­£é£ã€‚<br>è¯šé‚€ä½ æ¥èµ´è¿™åœºå…³äºçˆ±ä¸æ¬¢å–œçš„ç››å®´ã€‚</div><div class="info"><div class="row"><b>æ—¥ã€€æœŸ</b><span>2026å¹´11æœˆ1æ—¥ Â· ä¸™åˆå¹´ä¹æœˆå»¿ä¸‰ Â· å‘¨æ—¥</span></div><div class="row"><b>åœ°ã€€ç‚¹</b><span>æ— ä¸ºæ‚¦åé…’åº— Â· 1F æ¢¦å¹»ä¹å›­å®´ä¼šå…</span></div></div></article><div class="calendar"><div>NOVEMBER</div><div class="big">01</div><div>SUNDAY Â· 2026</div></div></section>
-<section class="section"><div class="heading"><small>WEDDING DAY</small><h2>ä»Šæ—¥è¡Œç¨‹</h2></div><div class="schedule"><div class="item"><div class="time">11:08</div><div><b>è¿å®¾ç­¾åˆ°</b><br>å…±å™æ—§æƒ…ï¼Œæ”¶ä¸‹ä»Šæ—¥å–œæ°”</div></div><div class="item"><div class="time">12:08</div><div><b>å©šç¤¼ä»ªå¼</b><br>ç¼˜å®šä»Šç”Ÿï¼Œç¤¼æˆç™½é¦–</div></div><div class="item"><div class="time">12:28</div><div><b>å–œå®´å¼€å¸­</b><br>ä¸¾æ¯åŒåº†ï¼Œå…±äº«è‰¯è¾°</div></div></div></section>
-<section class="section quest"><div class="heading"><small>WEDDING QUEST</small><h2>èµ´çº¦ Â· å…±æ²¾å–œæ°”</h2></div><article class="card"><p>ä»Šæ—¥ä»»åŠ¡å·²è§£é”ï¼šç©¿ä¸Šæœ€å¥½çš„è¡£è£³ï¼Œå¸¦ç€100%çš„å¥½å¿ƒæƒ…ï¼Œæ¥è§è¯æˆ‘ä»¬çš„ç¼˜å®šä»Šç”Ÿã€‚</p><ul><li>æŠµè¾¾ï¼šæ— ä¸ºæ‚¦åé…’åº— Â· 1F æ¢¦å¹»ä¹å›­å®´ä¼šå…</li><li>è§è¯ï¼š12:08 ç¼˜å®šä»Šç”Ÿï¼Œç¤¼æˆç™½é¦–</li><li>åº†ç¥ï¼š12:28 å–œå®´å¼€å¸­ï¼Œä¸¾æ¯åŒåº†</li></ul><strong>ä»»åŠ¡å¥–åŠ±ï¼šå–œæ°” +1000ã€€å¹¸ç¦å€¼ MAXã€€å›</strong></article></section>
-<section class="section"><div class="heading"><small>THE CEREMONY</small><h2>æˆ‘ä»¬çš„åƒç´ å©šç¤¼</h2></div><div class="card scene"><img alt="åƒç´ å©šç¤¼åœºæ™¯" src="https://raw.githubusercontent.com/tutouxiaozhou/stardew-wedding-template/main/assets/marriage-scene.webp"><div class="scene-note">ä¸¤å§“è”å§»ï¼Œä¸€å ‚ç¼”çº¦ã€‚<br>æ„¿å¾€åçš„æŸ´ç±³æ²¹ç›ï¼Œéƒ½æœ‰å››å­£é£ç›¸ä¼´ã€‚</div></div></section>
-<section class="section"><div class="heading"><small>HOW TO ARRIVE</small><h2>å‰å¾€å©šç¤¼åœ°å›¾</h2></div><div class="map"><img alt="æ˜Ÿéœ²è°·é£æ ¼åœ°å›¾" src="https://raw.githubusercontent.com/tutouxiaozhou/stardew-wedding-template/main/assets/pelican-town.webp"><div class="pin">â™¥ æ— ä¸ºæ‚¦åé…’åº— Â· æ¢¦å¹»ä¹å›­å®´ä¼šå…</div></div><div class="card" style="margin-top:24px;text-align:center"><b>æ— ä¸ºæ‚¦åé…’åº— Â· 1F æ¢¦å¹»ä¹å›­å®´ä¼šå…</b><br><a class="enter" href="https://www.amap.com/search?query=%E6%97%A0%E4%B8%BA%E6%82%A6%E5%8D%8E%E9%85%92%E5%BA%97" target="_blank" rel="noreferrer">æ‰“å¼€åœ°å›¾å¯¼èˆª</a></div></section>
-<section class="end"><img class="couple pixel" alt="é»„å‘˜è¶…ä¸è°¢å®¶ç’‡" src="https://raw.githubusercontent.com/tutouxiaozhou/stardew-wedding-template/main/assets/marriage-abigail.png"><div>è‰¯è¾°ç¾æ™¯ Â· æ¬¢å–œç›¸é€¢</div><h2>é»„å‘˜è¶… & è°¢å®¶ç’‡<br>æºæ‰‹æ•¬é‚€</h2><div>2026 Â· 11 Â· 01</div><p>å²æœˆæ˜¯ä¸€åœºæ¼«é•¿çš„æ—…è¡Œï¼Œæ¬¢èšæ˜¯å…¶ä¸­æœ€ç¾çš„é£æ™¯ã€‚<br>è°¢è°¢ä½ ä»¬ä¸€è·¯ä»¥æ¥çš„é™ªä¼´ã€‚<br>æˆ‘ä»¬ï¼Œä¸è§ä¸æ•£ï¼</p></section>
-<div class="footer">åƒç´ é£ç§äººå©šç¤¼é‚€è¯· Â· ç¥ç¦æ‰€æœ‰ç›¸é€¢çš„äººéƒ½æ‹¥æœ‰å¥½æ—¥å­</div>
-</div>
-<button class="music" id="music" aria-label="èƒŒæ™¯éŸ³ä¹">â™«</button><button class="top" onclick="scrollTo({top:0,behavior:'smooth'})">â†‘</button>
-<audio id="bgm" loop preload="none" src="https://raw.githubusercontent.com/tutouxiaozhou/stardew-wedding-template/main/assets/wedding-bgm.mp3"></audio>
-<script>const b=document.getElementById('bgm'),m=document.getElementById('music');m.onclick=()=>{if(b.paused){b.play().then(()=>m.textContent='âšâš').catch(()=>{})}else{b.pause();m.textContent='â™«'}};</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#17245f" />
+    <meta name="description" content="é»„å‘˜è¶…ä¸è°¢å®¶ç’‡çš„æ˜Ÿéœ²è°·åƒç´ é£ä¸­å¼å©šç¤¼é‚€è¯·å‡½ï½œ2026.11.01" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="é»„å‘˜è¶… & è°¢å®¶ç’‡ï½œStardew Wedding" />
+    <meta property="og:description" content="è‰¯è¾°å·²è‡³ï¼Œæˆ‘ä»¬åœ¨åƒç´ è°·ç­‰ä½ èµ´çº¦ã€‚2026.11.01 è§ã€‚" />
+    <meta property="og:image" content="/assets/share-cover.svg" />
+    <title>é»„å‘˜è¶… & è°¢å®¶ç’‡ï½œStardew Wedding</title>
+    <link rel="icon" href="/assets/wedding-ring.png" />
+    <link rel="preload" href="/assets/fonts/fusion-pixel-12px-proportional-zh-hans.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <svg class="pixel-symbols" aria-hidden="true">
+      <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M3 20h4v-4h3v-3h3v-3h3V7h3V3H9v3H6v3H3v11Zm7-10h3V7h3v3h-3v3h-3v-3Z" /></symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M4 3h4v3h8V3h4v3h2v16H2V6h2V3Zm2 8v7h12v-7H6Zm2 2h3v3H8v-3Z" /></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M8 2h8v2h3v3h2v7h-2v3h-2v2h-2v3H9v-3H7v-2H5v-3H3V7h2V4h3V2Zm1 6v5h6V8H9Z" /></symbol>
+      <symbol id="icon-ring" viewBox="0 0 24 24"><path d="M8 2h8v2h2v4h-2v2h-1v2h3v2h2v6h-2v2H6v-2H4v-6h2v-2h3v-2H8V8H6V4h2V2Zm2 3v3h4V5h-4Zm-2 10v4h8v-4H8Z" /></symbol>
+      <symbol id="icon-shirt" viewBox="0 0 24 24"><path d="M7 3h3v3h4V3h3l5 4v6h-4v9H6v-9H2V7l5-4Zm3 7v3h4v-3h-4Z" /></symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24"><path d="M10 2h4v5h5v4h3v4h-7v7H9v-7H2v-4h3V7h5V2Z" /></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24"><path d="M8 2h8v2h3v3h2v10h-2v3h-3v2H8v-2H5v-3H3V7h2V4h3V2Zm2 4v7h6V9h-3V6h-3Z" /></symbol>
+      <symbol id="icon-music" viewBox="0 0 24 24"><path d="M10 3h11v14h-3V8h-5v12h-2v2H5v-2H3v-4h2v-2h5V3Zm3 2v1h5V5h-5ZM6 17v2h4v-2H6Z" /></symbol>
+      <symbol id="icon-map" viewBox="0 0 24 24"><path d="M3 4h6l3 2 3-2h6v16h-6l-3-2-3 2H3V4Zm4 3H6v10h1V7Zm6 2h-2v6h2V9Zm5-2h-1v10h1V7Z" /></symbol>
+    </svg>
+
+    <main class="h5-shell">
+      <section class="hero" id="top">
+        <div class="sky-stars" aria-hidden="true"></div>
+        <div class="hero-copy reveal is-visible">
+          <p class="eyebrow">å‰æ—¥ Â· ä½³æœŸ</p>
+          <h1 class="game-title" aria-label="Groom and Bride"><span data-content="groomLatin">GROOM</span><span data-content="brideLatin">BRIDE</span></h1>
+          <p class="hero-cn" data-content="couple">é»„å‘˜è¶… Ã— è°¢å®¶ç’‡</p>
+          <div class="pixel-couple-hero"><img src="/assets/pixel-couple.svg" alt="èº«ç©¿ä¸­å¼å–œæœçš„æ–°éƒæ–°å¨˜åƒç´ å°äºº" /></div>
+          <p class="hero-date" data-content="dateDot">2026 Â· 11 Â· 01</p>
+        </div>
+        <div class="hero-mountains" aria-hidden="true"></div>
+        <button class="scroll-hint pixel-control" type="button" data-scroll="#notice" aria-label="å¼€å¯é‚€è¯·å‡½">
+          <span>ç‚¹å‡»å¼€å¯å–œå¸–</span><b>â†“</b>
+        </button>
+      </section>
+
+      <section class="notice story-section" id="notice">
+        <header class="section-heading reveal">
+          <svg><use href="#icon-leaf" /></svg>
+          <p>THE WEDDING INVITATION</p>
+          <h2>å©šç¤¼é‚€è¯·å‡½</h2>
+        </header>
+
+        <article class="invitation-board reveal pop-in">
+          <div class="vine vine-left" aria-hidden="true"></div><div class="vine vine-right" aria-hidden="true"></div>
+          <p class="board-kicker">å› Â· è‰¯è¾°å‰æ—¥</p>
+          <h3 data-content="coupleAmp">é»„å‘˜è¶… & è°¢å®¶ç’‡</h3>
+          <p class="board-message">æ¡ƒä¹‹å¤­å¤­ï¼Œç¼ç¼å…¶åã€‚
+ä¸¤é¢—æ¼‚æ³Šçš„çµé­‚ï¼ŒäºèŒ«èŒ«äººæµ·ç›¸é€¢ã€‚
+é»„å‘˜è¶…ä¸è°¢å®¶ç’‡ï¼Œè¯šé‚€ä½ å…±èµ´è¿™åœºå…³äºçˆ±ä¸æ¬¢å–œçš„ç››å®´ã€‚</p>
+          <dl class="event-list">
+            <div><dt><svg><use href="#icon-calendar" /></svg>æ—¥æœŸ</dt><dd data-content="dateCn">2026å¹´11æœˆ1æ—¥ Â· ä¸™åˆå¹´ä¹æœˆå»¿ä¸‰ Â· å‘¨æ—¥</dd></div>
+            <div><dt><svg><use href="#icon-pin" /></svg>åœ°ç‚¹</dt><dd data-content="venue">æ— ä¸ºæ‚¦åé…’åº— Â· 1F æ¢¦å¹»ä¹å›­å®´ä¼šå…</dd></div>
+            <div><dt><svg><use href="#icon-ring" /></svg>æ–°äºº</dt><dd data-content="coupleAmp">é»„å‘˜è¶… & è°¢å®¶ç’‡</dd></div>
+            <div><dt><svg><use href="#icon-shirt" /></svg>æ–°äºº</dt><dd>é»„å‘˜è¶… & è°¢å®¶ç’‡</dd></div>
+          </dl>
+        </article>
+
+        <div class="calendar-card reveal">
+          <div class="season-line">ä¸™åˆå¹´ä¹æœˆå»¿ä¸‰ Â· å‘¨æ—¥</div>
+          <div class="calendar-main"><span data-content="calendarMonth">OCT</span><strong data-content="calendarDay">01</strong><span data-content="calendarYear">2030</span></div>
+          <div class="countdown"><span>è·ç¦»å©šç¤¼è¿˜æœ‰</span><strong id="days-count">--</strong><span>å¤©</span></div>
+        </div>
+
+        <div class="schedule-block reveal">
+          <div class="mini-heading"><svg><use href="#icon-clock" /></svg><span>ä»Šæ—¥è¡Œç¨‹</span></div>
+          <div class="schedule-grid" data-content="schedule"></div>
+        </div>
+      </section>
+      <section class="quest story-section" id="invitation">
+        <header class="section-heading light reveal"><svg><use href="#icon-star" /></svg><p>WEDDING Q/EST</p><h2>å¹¶æ—¥ Â· å……æ²¾å–˜åœ¨ä½œ</h2></header>
+        <article class="quest-card reveal pop-in">
+          <div class="quest-pin">!</div>
+          <p >ä»Šæ—¥ä»»åŠ¡å·²è§£é”ï¼šç©¿ä¸Šæœ€å¥½çš„è¡£è£³ï¼Œå¸¦ç€100%çš„å¥½å¿ƒæƒ…ï¼Œæ¥è§è¯æˆ‘ä»¬çš„ç¼˜å®šä»Šç”Ÿã€‚</p>
+          <ul>
+            <li><svg><use href="#icon-star" /></svg><b>æŠµè¾¾</b><span data-content="venue">æ— ä¸ºæ‚¦åé…’åº— Â· 1F æ¢¦å¹»ä¹å›­å®´ä¼šå…</span></li>
+            <li><svg><use href="#icon-star" /></svg><b>è§è¯</b><span>12:08 ç¼˜å®šä»Šç”Ÿï¼Œç¤¼æˆç™½é¦–</span></li>
+            <li><svg><use href="#icon-star" /></svg><b>åº†ç¥</b><span>12:28 å–œå®´å¼€å¸­ï¼Œä¸¾æ¯åŒåº†</span></li>
+          </ul>
+          <div class="quest-reward">ä»»åŠ¡å¥–åŠ±ï¼šå–œæ°” +1000ã€€å¹¸ç¦å€¼ MAXã€€å›</div>
+        </article>
+        <div class="junimo-row reveal" aria-label="å…­åªç¥å°¼é­”å‰æ¥ç¥ç¦">>          <img src="/assets/junimo.gif" alt="" /><img src="/assets/junimo.gif" alt="" /><img src="/assets/junimo.gif" alt="" />
+          <img src="/assets/junimo.gif" alt="" /><img src="/assets/junimo.gif" alt="" /><img src="/assets/junimo.gif" alt="" />
+        </div>
+      </section>
+      <section class="ceremony story-section" id="ceremony">
+        <header class="section-heading reveal"><svg><use href="#icon-ring" /></svg><p>THE BEREMONY</p><h2>æˆ‘ä»¬çš„çº¦äº¤è¾±æœŸ/h2></header>
+        <div class="ceremony-scene reveal pop-in">
+          <img src="/assets/marriage-scene.webp" alt="æ˜Ÿéœ²è°»å¥½çš„è¡£è£³ï¼Œå¸¦ç€" />
+          <div class="ceremony-couple"><img src="/assets/pixel-couple.svg" alt="èº«ç©¿ä¸­å¼å–œæœçš„æ–°éƒæ–°å¨˜åƒç´ å°äºº" /></div>
+          <div class="pixel-petals" aria-hidden="true"></div>
+        </div>
+        <article class="dialogue-box reveal">
+          <img src="/assets/pixel-couple.svg" alt="é»„å‘˜è¶…ä¸è°¢å®¶ç’‡ä»£ç”¨çš„" />
+          <div><b>è¿‡åŒä¸–å®Œ</b><p>æ”¶åˆ°ä½ çš„ç­”å¤Œæ–‡å­¦ç”¨ï¼Œå¥‘çš„æ™ªåˆ·ä½¿æ‰©..</p></div>
+        </article>
+      </section>
+
+      <section class="map-section story-section" id="map">
+        <header class="section-heading reveal"><svg><use href="#icon-map" /></svg><p>HOW TO ARIVE</p><h2>å§æœ€æ— å°‚æœ€ç‚¹</h2></header>
+        <div class="map-frame reveal pop-in">
+          <img src="/assets/pelican-town.webp" alt="æ˜Ÿéœ²è°·æ­¤åœ°å›¾å›¾" />
+          <span class="map-pin"><svg><use href="#icon-pin" /></svg><small data-content="venueShort">šb¦rË¢Âß–ºÓ’òk–:ğ½Íµ…±°øğ½ÍÁ…¸øğ½ÍÁ…¸ø(€€€€€€€€ğ½‘¥Øø(€€€€€€€€ñ…ÉÑ¥±”±…ÍÌô‰±½…Ñ¥½¸µ…ÉÉ•Ù•…°ˆø(€€€€€€€€€€ñÀ±…ÍÌô‰±½…Ñ¥½¸µ½Ù•É±¥¹”ˆûš¶–º3–6#–nû–nøƒŠÜƒ–’7–úÇ’îßšrš^ƒ–Âšr
+äğ½Àø(€€€€€€€€€€ñ Ì‘…Ñ„µ½¹Ñ•¹Ğô‰Ù•¹Õ”ˆûš^ƒ’âëš&‹–6;¦K–ê\€½àÅƒšŠ›–æï’æC–n·–ºÓ’òk–:ğ½ Ìø(€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰ÑÉ…¹ÍÁ½ÉĞµÉ¥ˆø(€€€€€€€€€€€€ñ‘¥Øøñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½‰ÕÌ¹Á¹œˆ…±Ğô‹–ŞÓ–¬ˆ€¼øñˆûš*×¢úû¦K–ê\ğ½ˆøñÍÁ…¸ûš^ƒ’âëš
+›–6;¦K–ê\ğ½ÍÁ…¸øğ½‘¥Øø(€€€€€€€€€€€€ñ‘¥Øøñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½¡½ÉÍ”¹Á¹œˆ…±Ğô‹¦¦³–2ç’îš2¢«¦¦øˆ€¼øñˆû–ºÓ’òk–:ğ½ˆøñÍÁ…¸øÅƒšŠ›–æï’æC–n·–ºÓ’òk–:ğ½ÍÁ…¸øğ½‘¥Øø(€€€€€€€€€€ğ½‘¥Øø(€€€€€€€€€€ñ„±…ÍÌô‰Á¥á•°µ‰ÕÑÑ½¸ˆ‘…Ñ„µ½¹Ñ•¹Ğô‰¹…Ù¥…Ñ¥½¹1¥¹¬ˆÉ•°ô‰¹½É•™•ÉÉ•Èˆûš&O–ò–rÃ–nû–¾ó¢"¨ğ½„ø(€€€€€€€€€ğ½…ÉÑ¥±”ø(€€€€€€€€ğ½…ÉÑ¥±”ø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰ÉÍÙÀˆ¥ô‰ÉÍÙÀˆ‘…Ñ„µÉÍÙÀµÕ¤¡¥‘‘•¸ø(€€€€€€€€ñ¡•…‘•È±…ÍÌô‰Í•Ñ¥½¸µ¡•…‘¥¹œ±¥¡ĞÉ•Ù•…°ˆøñÍÙœøñÕÍ”¡É•˜ôˆ¥½¸µ±•…˜ˆ€¼øğ½ÍÙœøñÀù)=%8Q!1	IQ%=8ğ½Àøñ Èû†»¢º“¢ÖÓê˜ğ½ Èøğ½¡•…‘•Èø(€€€€€€€€ñ™½É´±…ÍÌô‰ÉÍÙÀµ…ÉÉ•Ù•…°Á½Àµ¥¸ˆ¥ô‰ÉÍÙÀµ™½É´ˆ¹½Ù…±¥‘…Ñ”ø(€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰ÉÍÙÀµ…ÉµÑ¥Ñ±”ˆø(€€€€€€€€€€€€ñÍÁ…¸ùA1%8Q=]8ğ½ÍÁ…¸ø(€€€€€€€€€€€€ñÍÑÉ½¹œûšvGšÂG¢ÖÓê›fï¢ºÃÂüğ½ÍÑÉ½¹œø(€€€€€€€€€€€€ñÀû¢¾ß–r£¢şg¦3Vg’â/’öƒj’ş‡š¿¾ò3šZç’úÿš"G’î³’âë’öƒ––’–â·’ö7ğ½Àø(€€€€€€€€€€ğ½‘¥Øø(€€€€€€€€€€ñ±…‰•°±…ÍÌô‰™½É´µ™¥•±ˆø(€€€€€€€€€€€€ñÍÁ…¸û–ºû–º‹–O–B4€ñˆû–ş–†¬ğ½ˆøğ½ÍÁ…¸ø(€€€€€€€€€€€€ñ¥¹ÁÕĞÑåÁ”ô‰Ñ•áĞˆ¹…µ”ô‰Õ•ÍÑ9…µ”ˆ…ÕÑ½½µÁ±•Ñ”ô‰¹…µ”ˆµ…á±•¹Ñ ôˆÌÀˆÁ±…•¡½±‘•Èô‹¢¾ß¢úO–—’öƒj–O–B4ˆÉ•ÅÕ¥É•€¼ø(€€€€€€€€€€ğ½±…‰•°ø(€€€€€€€€€€ñ±…‰•°±…ÍÌô‰™½É´µ™¥•±ˆø(€€€€€€€€€€€€ñÍÁ…¸û–ë–â·’êëšVÀ€ñˆû–B¯šr³’êèğ½ˆøğ½ÍÁ…¸ø(€€€€€€€€€€€€ñÍ•±•Ğ¹…µ”ô‰Á…ÉÑåM¥é”ˆø(€€€€€€€€€€€€€€ñ½ÁÑ¥½¸Ù…±Õ”ôˆÄˆøÄƒ’êèğ½½ÁÑ¥½¸øñ½ÁÑ¥½¸Ù…±Õ”ôˆÈˆøÈƒ’êèğ½½ÁÑ¥½¸øñ½ÁÑ¥½¸Ù…±Õ”ôˆÌˆøÌƒ’êèğ½½ÁÑ¥½¸ø(€€€€€€€€€€€€€€ñ½ÁÑ¥½¸Ù…±Õ”ôˆĞˆøĞƒ’êèğ½½ÁÑ¥½¸øñ½ÁÑ¥½¸Ù…±Õ”ôˆÔˆøÔƒ’êèğ½½ÁÑ¥½¸øñ½ÁÑ¥½¸Ù…±Õ”ôˆØˆøØƒ’êèğ½½ÁÑ¥½¸ø(€€€€€€€€€€€€ğ½Í•±•Ğø(€€€€€€€€€€ğ½±…‰•°ø(€€€€€€€€€€ñ™¥•±‘Í•Ğ±…ÍÌô‰…ÑÑ•¹‘…¹”µ™¥•±ˆ¥ô‰…½µµ½‘…Ñ¥½¸µ™¥•±ˆø(€€€€€€€€€€€€ñ±••¹ûšb¿–B›¦r¢š’ö?–ºü€ñˆû–ş–†¬ğ½ˆøğ½±••¹ø(€€€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰…ÑÑ•¹‘…¹”µ½ÁÑ¥½¹Ìˆø(€€€€€€€€€€€€€€ñ±…‰•°øñ¥¹ÁÕĞÑåÁ”ô‰É…‘¥¼ˆ¹…µ”ô‰¹••‘Í½µµ½‘…Ñ¥½¸ˆÙ…±Õ”ô‰å•ÌˆÉ•ÅÕ¥É•€¼øñÍÁ…¸û¦r¢š’ö?–ºüğ½ÍÁ…¸øğ½±…‰•°ø(€€€€€€€€€€€€€€ñ±…‰•°øñ¥¹ÁÕĞÑåÁ”ô‰É…‘¥¼ˆ¹…µ”ô‰¹••‘Í½µµ½‘…Ñ¥½¸ˆÙ…±Õ”ô‰¹¼ˆÉ•ÅÕ¥É•€¼øñÍÁ…¸ûš^ƒ¦r’ö?–ºüğ½ÍÁ…¸øğ½±…‰•°ø(€€€€€€€€€€€€ğ½‘¥Øø(€€€€€€€€€€ğ½™¥•±‘Í•Ğø(€€€€€€€€€€ñ‘¥Ø¥ô‰…½µµ½‘…Ñ¥½¸µ‘…Ñ•Ìˆ¡¥‘‘•¸ø(€€€€€€€€€€€€ñ±…‰•°±…ÍÌô‰™½É´µ™¥•±ˆø(€€€€€€€€€€€€€€ñÍÁ…¸û–—’ö?š^—šrš^Û¦^Ğ€ñˆû–ş–†¬ğ½ˆøğ½ÍÁ…¸ø(€€€€€€€€€€€€€€ñ¥¹ÁÕĞÑåÁ”ô‰‘…Ñ•Ñ¥µ”µ±½…°ˆ¹…µ”ô‰¡•­%¹Ğˆ€¼ø(€€€€€€€€€€€€ğ½±…‰•°ø(€€€€€€€€€€€€ñ±…‰•°±…ÍÌô‰™½É´µ™¥•±ˆø(€€€€€€€€€€€€€€ñÍÁ…¸û¦š"ÿš^—šrš^Û¦^Ğ€ñˆû–ş–†¬ğ½ˆøğ½ÍÁ…¸ø(€€€€€€€€€€€€€€ñ¥¹ÁÕĞÑåÁ”ô‰‘…Ñ•Ñ¥µ”µ±½…°ˆ¹…µ”ô‰¡•­=ÕÑĞˆ€¼ø(€€€€€€€€€€€€ğ½±…‰•°ø(€€€€€€€€€€ğ½‘¥Øø(€€€€€€€€€€ñ±…‰•°±…ÍÌô‰™½É´µ™¥•±ˆø(€€€€€€€€€€€€ñÍÁ…¸û¢SÎïR×¢¾t€ñˆû¦'–†¬ğ½ˆøğ½ÍÁ…¸ø(€€€€€€€€€€€€ñ¥¹ÁÕĞÑåÁ”ô‰Ñ•°ˆ¹…µ”ô‰Á¡½¹”ˆ…ÕÑ½½µÁ±•Ñ”ô‰Ñ•°ˆ¥¹ÁÕÑµ½‘”ô‰Ñ•°ˆµ…á±•¹Ñ ôˆÈÀˆÁ±…•¡½±‘•Èô‹šZç’úÿš"G’î³’â;’öƒ†»¢ºˆ€¼ø(€€€€€€€€€€ğ½±…‰•°ø(€€€€€€€€€€ñ±…‰•°±…ÍÌô‰™½É´µ™¥•±ˆø(€€€€€€€€€€€€ñÍÁ…¸ûVg¢¢–wš<€ñˆû¦'–†¬ğ½ˆøğ½ÍÁ…¸ø(€€€€€€€€€€€€ñÑ•áÑ…É•„¹…µ”ô‰µ•ÍÍ…”ˆµ…á±•¹Ñ ôˆÈÀÀˆÉ½İÌôˆĞˆÁ±…•¡½±‘•Èô‹–g’â/šÏ–¾çš"G’î³¢¾Ój¢¾wŠ›Š˜ˆøğ½Ñ•áÑ…É•„ø(€€€€€€€€€€€€ñÍµ…±°øñ½ÕÑÁÕĞ¥ô‰µ•ÍÍ…”µ½Õ¹ĞˆøÀğ½½ÕÑÁÕĞø€¼€ÈÀÀğ½Íµ…±°ø(€€€€€€€€€€ğ½±…‰•°ø(€€€€€€€€€€ñÀ±…ÍÌô‰™½É´µ•ÉÉ½Èˆ¥ô‰ÉÍÙÀµ•ÉÉ½ÈˆÉ½±”ô‰…±•ÉĞˆ¡¥‘‘•¸øğ½Àø(€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÌô‰Á¥á•°µ‰ÕÑÑ½¸ÉÍÙÀµÍÕ‰µ¥ĞˆÑåÁ”ô‰ÍÕ‰µ¥Ğˆû’şw–¶c¢ÖÓê›’ş‡š¼ğ½‰ÕÑÑ½¸ø(€€€€€€€€€€ñÀ±…ÍÌô‰™½É´µ¹½Ñ”ˆûš>C’ê“–6Ï¢†£’ë–B3š?š"G’î³’î’âëšr³š²‡–¦k’ó¶ç–’R£¦S’şw–¶c’î—’â+’ş‡š¿ğ½Àø(€€€€€€€€ğ½™½É´ø(€€€€€€€€ñ…ÉÑ¥±”±…ÍÌô‰ÉÍÙÀµÍÕ•ÍÌÉ•Ù•…°ˆ¥ô‰ÉÍÙÀµÍÕ•ÍÌˆ…É¥„µ±¥Ù”ô‰Á½±¥Ñ”ˆÑ…‰¥¹‘•àôˆ´Äˆ¡¥‘‘•¸ø(€€€€€€€€€€ñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½©Õ¹¥µ¼¹¥˜ˆ…±Ğô‹–w–Âó¦¶Pˆ€¼ø(€€€€€€€€€€ñÀûfï¢ºÃ–º3š"@ğ½Àø(€€€€€€€€€€ñ Ì¥ô‰ÉÍÙÀµÍÕ•ÍÌµÑ¥Ñ±”ˆû–ŞËšRÛ–"Ã’öƒj¶S–’4ğ½ Ìø(€€€€€€€€€€ñÍÁ…¸¥ô‰ÉÍÙÀµÍÕ•ÍÌµÍÕµµ…Éäˆøğ½ÍÁ…¸ø(€€€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÌô‰Á¥á•°µ‰ÕÑÑ½¸ˆ¥ô‰ÉÍÙÀµ•‘¥ĞˆÑåÁ”ô‰‰ÕÑÑ½¸ˆû’ş»šRç¢ÖÓê›’ş‡š¼ğ½‰ÕÑÑ½¸ø(€€€€€€€€ğ½…ÉÑ¥±”ø(€€€€€€ğ½Í•Ñ¥½¸ø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰Õ•ÍÑÌÍÑ½ÉäµÍ•Ñ¥½¸ˆ¥ô‰Õ•ÍÑÌˆø(€€€€€€€€ñ¡•…‘•È±…ÍÌô‰Í•Ñ¥½¸µ¡•…‘¥¹œÉ•Ù•…°ˆøñÍÙœøñÕÍ”¡É•˜ôˆ¥½¸µ±•…˜ˆ€¼øğ½ÍÙœøñÀù	1MM%9Lğ½Àøñ Èû–â›’â#–w¦?šr––÷jğ½ Èøğ½¡•…‘•Èø(€€€€€€€€ñ…ÉÑ¥±”±…ÍÌô‰‰±•ÍÍ¥¹œµ…ÉÉ•Ù•…°Á½Àµ¥¸ˆø(€€€€€€€€€€ñ‘¥Ø±…ÍÌô‰‰±•ÍÍ¥¹œµ©Õ¹¥µ½Ìˆø(€€€€€€€€€€€€ñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½©Õ¹¥µ¼¹¥˜ˆ…±Ğôˆˆ€¼øñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½©Õ¹¥µ¼¹¥˜ˆ…±Ğôˆˆ€¼øñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½©Õ¹¥µ¼¹¥˜ˆ…±Ğôˆˆ€¼ø(€€€€€€€€€€€€ñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½©Õ¹¥µ¼¹¥˜ˆ…±Ğôˆˆ€¼øñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½©Õ¹¥µ¼¹¥˜ˆ…±Ğôˆˆ€¼øñ¥µœÍÉŒôˆ½…ÍÍ•ÑÌ½©Õ¹¥µ¼¹¥˜ˆ…±Ğôˆˆ€¼ø(€€€€€€€€€€ğ½‘¥Øø(€€€€€€€€€€ñÀûšz_šr³šrğ½Àø(€€€€€€€€ğ½…ÉÑ¥±”ø(€€€€€€ğ½Í•Ñ¥½¸ø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰•¹‘¥¹œˆ¥ô‰•¹‘¥¹œˆø(€€€€€€€€ñ‘¥Ø±…ÍÌô‰•¹‘¥¹œµÍÑ…ÉÌˆ…É¥„µ¡¥‘‘•¸ô‰ÑÉÕ”ˆû¦f”ƒ
+ÜƒŠr˜ƒ
+Üƒ–n4ğ½‘¥Øø(€€€€€€€€ñ¥µœ±…ÍÌô‰•¹‘¥¹œµ©Õ¹¥µ¼•¹‘¥¹œµ½ÕÁ±”ˆÍÉŒôˆ½…ÍÍ•ÑÌ½Á¥á•°µ½ÕÁ±”¹ÍÙœˆ…±Ğô‹¦î–Fc¢Ú’â;¢Â‹–ºÛJˆ€¼ø(€€€€€€€€ñ‘¥Ø±…ÍÌô‰•¹‘¥¹œµ½ÁäÉ•Ù•…°ˆøñÀû¢&¿¢úÃú;šf¼ƒ
+Üƒš²‹–Zsnã¦ˆğ½Àøñ Èû¦î–Fc¢Ú€˜ƒ¢Â‹–ºÛJñ‰È€¼ûšBëš&/šV³¦
+ ğ½ ÈøñÍÁ…¸‘…Ñ„µ½¹Ñ•¹Ğô‰½ÕÁ±•µÀˆû¦î–Fc¢Ú€˜ƒ¢Â‹–ºÛJğ½ÍÁ…¸øñÍÑÉ½¹œ‘…Ñ„µ½¹Ñ•¹Ğô‰‘…Ñ•½ĞˆøÈÀÈØƒ
+Ü€ÄÄƒ
+Ü€ÀÄğ½ÍÑÉ½¹œøğ½‘¥Øø(€€€€€€€€ñ‰ÕÑÑ½¸±…ÍÌô‰Á¥á•°µ‰ÕÑÑ½¸±¥¡Ğµ‰ÕÑÑ½¸ˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ‘…Ñ„µÍÉ½±°ôˆÑ½Àˆû–n{–"Ã¢Âß–rÃ–—–>Œğ½‰ÕÑÑ½¸ø(€€€€€€€€ñ™½½Ñ•Èû–?Òƒ¦;’êë–¦k’ó¦
+¢¾Üƒ
+Üƒ–wš?š&šr'nã¦‹j’êë¦÷š.—šr'––÷š^—–¶@ñ‰È€¼ûšr³¦†×¦v‹’î’ös–¦k’ó¦
+¢¾ß’öÿR ğ½™½½Ñ•Èø(€€€€€€ğ½Í•Ñ¥½¸ø(€€€€ğ½µ…¥¸ø((€€€€ñ¹…Ø±…ÍÌô‰™±½…Ñ¥¹œµÑ½½±Ìˆ…É¥„µ±…‰•°ô‹¦†×¦v‹–Ş—–Üˆø(€€€€€€ñ‰ÕÑÑ½¸¥ô‰µÕÍ¥ŒµÑ½±”ˆ±…ÍÌô‰Ñ½½°µÍ±½ĞˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ…É¥„µ±…‰•°ô‹šJ·šRû¢3šf¿¦~Ï’æ@ˆ…É¥„µÁÉ•ÍÍ•ô‰™…±Í”ˆøñÍÙœøñÕÍ”¡É•˜ôˆ¥½¸µµÕÍ¥Œˆ€¼øğ½ÍÙœøğ½‰ÕÑÑ½¸ø(€€€€€€ñ‰ÕÑÑ½¸±…ÍÌô‰Ñ½½°µÍ±½ĞˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ‘…Ñ„µÍÉ½±°ôˆµ…Àˆ…É¥„µ±…‰•°ô‹š~—r/–rÃ
+äˆøñÍÙœøñÕÍ”¡É•˜ôˆ¥½¸µµ…Àˆ€¼øğ½ÍÙœøğ½‰ÕÑÑ½¸ø(€€€€€€ñ‰ÕÑÑ½¸±…ÍÌô‰Ñ½½°µÍ±½ĞˆÑåÁ”ô‰‰ÕÑÑ½¸ˆ‘…Ñ„µÍÉ½±°ôˆÉÍÙÀˆ‘…Ñ„µÉÍÙÀµÍ¡½ÉÑÕĞ¡¥‘‘•¸…É¥„µ±…‰•°ô‹–†¯–g¢ÖÓê›’ş‡š¼ˆøñÍÙœøñÕÍ”¡É•˜ôˆ¥½¸µ±•…˜ˆ€¼øğ½ÍÙœøğ½‰ÕÑÑ½¸ø(€€€€ğ½¹…Øø(€€€€ñ…Õ‘¥¼¥ô‰İ•‘‘¥¹œµµÕÍ¥ŒˆÍÉŒôˆ½…ÍÍ•ÑÌ½İ•‘‘¥¹œµ‰´¹µÀÌˆÁÉ•±½…ô‰µ•Ñ…‘…Ñ„ˆ±½½Àøğ½…Õ‘¥¼€€€€€ñÍÉ¥ÁĞÑåÁ”ô‰µ½‘Õ±”ˆÍÉŒôˆ½…ÁÀ¹©Ìˆøğ½ÍÉ¥ÁĞø(€€ğ½‰½‘äø(ğ½¡Ñµ°ø(
