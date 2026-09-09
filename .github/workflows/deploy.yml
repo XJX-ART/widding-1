@@ -12,24 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build from original template and exact ZIP files
+      - name: Build from original template and exact wedding page
         run: |
           rm -rf site
           git clone --depth 1 https://github.com/tutouxiaozhou/stardew-wedding-template.git site
           rm -rf site/.git
-          python3 - <<'PY2'
-          import base64
-          from pathlib import Path
-          files = {
-            'index.html': 'PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9InpoLUNOIj4KICA8aGVhZD4KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04IiAvPgogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAsIHZpZXdwb3J0LWZpdC1jb3Zlcj0iIC8+CiAgICA8bWV0YSBuYW1lPSJ0aGVtZS1jb2xvciIgY29udGVudD0iIzE3MjQ1ZiIgLz4KICAgIDxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSLmiqXlhaznq5TmlYjovbTlvbHlnZCBY5qW8eWJvcmF3c2V0dGluZyBzdGFyZHJldyB3ZWRkaW5nIHlvdXJhbW9udCBzaW5nIGxvbmcgMjAyNi4xMS4wMSIgLz4KICAgIDxtZXRhIHByb3BlcnR5PSJvZzp0eXBlIiBjb250ZW50PSJ3ZWJzaXRlIiAvPgogICAgPG1ldGEgcHJvcGVydHk9Im9nOnRpdGxlIiBjb250ZW50PSLmiqXlhaznq5TmlYjovbTlpb2VuIGd1d2VkZGluZyIgLz4KICAgIDxtZXRhIHByb3BlcnR5PSJvZzpkZXNjcmlwdGlvbiIgY29udGVudD0iIiAvPgogICAgPGxpbmsgcmVsPSJwcmVsb2FkIiBocmVmPSIvYXNzZXRzL2ZvbnRzL2Z1c2lvbi1waXhlbC0xMnB4LXByb3BvcnRpb25hbC16aC1oYW5zLndvZmYyIiBhcz0iZm9udCIgdHlwZT0iZm9udC93b2ZmMiIgY3Jvc3Nvcmk+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii9zdHlsZS5jc3MiIC8+CiAgICA8dGl0bGU+6L+Z5Yue6LaKICYg6K6K5a625p2h44CRU3RhcmRldyBXZWRkaW5nPC90aXRsZT4KICA8L2hlYWQ+CiAgPGJvZHk+CiAgICA8ZGl2IGlkPSJhcHAiPjwvZGl2PgogICAgPHNjcmlwdCB0eXBlPSJtb2R1bGUiIHNyYz0iL2FwcC5qcyI+PC9zY3JpcHQ+CiAgPC9ib2R5Pgo8L2h0bWw+Cg==',
-            'assets/pixel-couple.svg': 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+PHBhdGggZmlsbD0iI0ZmYzY2OCIIGQ9Ik0yMCAxMDBoMTIwdjIwaC0xMjB6Ii8+PC9zdmc+',
-            'assets/share-cover.svg': 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYzMCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIiBmaWxsPSIjMTcyNDVmIi8+PHRleHQgeD0iNjAwIiB5PSIzMjAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7miqXlhaznq5QgJiDovbTlpb2VuPC90ZXh0Pjwvc3ZnPg=='
-          }
-          for path, data in files.items():
-              p=Path('site')/path
-              p.parent.mkdir(parents=True, exist_ok=True)
-              p.write_bytes(base64.b64decode(data))
-          PY2
+          cp "$GITHUB_WORKSPACE/index.html" site/index.html
+          cp "$GITHUB_WORKSPACE/assets/pixel-couple.svg" site/assets/pixel-couple.svg
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
