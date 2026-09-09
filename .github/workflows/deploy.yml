@@ -19,8 +19,6 @@ jobs:
           rm -rf site/.git
           python3 - <<'PY'
           from pathlib import Path
-          import re
-
           app = Path('site/app.js')
           s = app.read_text(encoding='utf-8')
           s = s.replace("groom: '新郎姓名'", "groom: '黄员超'")
@@ -31,17 +29,14 @@ jobs:
           s = s.replace("dateDot: '2030 · 10 · 01'", "dateDot: '2026 · 11 · 01'")
           s = s.replace("dateCn: '2030年10月1日 · 星期二'", "dateCn: '2026年11月1日 · 丙午年九月廿三 · 周日'")
           s = s.replace("calendarMonth: 'OCT'", "calendarMonth: 'NOV'")
-          s = s.replace("calendarDay: '01'", "calendarDay: '01'")
           s = s.replace("calendarYear: '2030'", "calendarYear: '2026'")
           s = s.replace("venue: '示例市幸福区星露谷宴会厅'", "venue: '无为悦华酒店 · 1F 梦幻乐园宴会厅'")
           s = s.replace("venueShort: '星露谷宴会厅'", "venueShort: '无为悦华酒店'")
-          s = s.replace("navigationUrl: 'https://uri.amap.com/search?keyword=%E7%A4%BA%E4%BE%8B%E5%B8%82%E5%B9%B8%E7%A6%8F%E5%8C%BA%E6%98%9F%E9%9C%B2%E8%B0%B7%E5%AE%B4%E4%BC%9A%E5%8E%85&src=stardew-wedding&callnative=1'", "navigationUrl: 'https://uri.amap.com/search?keyword=%E6%97%A0%E4%B8%BA%E6%82%A6%E5%8D%8E%E9%85%92%E5%BA%97&src=stardew-wedding&callnative=1'")
           start = s.index('  schedule: [')
           end = s.index('  ],', start) + 4
           schedule = '''  schedule: [\n    { label: '迎宾签到', time: '11:08', description: '共叙旧情，收下今日喜气' },\n    { label: '婚礼仪式', time: '12:08', description: '缘定今生，礼成白首' },\n    { label: '喜宴开席', time: '12:28', description: '举杯同庆，共享良辰' },\n  ],'''
           s = s[:start] + schedule + s[end:]
           app.write_text(s, encoding='utf-8')
-
           page = Path('site/index.html')
           h = page.read_text(encoding='utf-8')
           replacements = {
@@ -53,15 +48,12 @@ jobs:
             '2030 · 10 · 01': '2026 · 11 · 01',
             '2030年10月1日 · 星期二': '2026年11月1日 · 丙午年九月廿三 · 周日',
             '示例市幸福区星露谷宴会厅': '无为悦华酒店 · 1F 梦幻乐园宴会厅',
-            '示例市幸福区': '无为市',
           }
-          for a,b in replacements.items():
-            h = h.replace(a,b)
+          for a,b in replacements.items(): h = h.replace(a,b)
           h = h.replace('秋日吉期，我们在星露谷等你赴约。2026.11.01 见。', '2026年11月1日，我们在无为悦华酒店等你赴约。')
-          h = h.replace('春去秋来，我们决定在星露谷举办一场婚礼。诚挚邀请你，来见证这一份丰收般的幸福。', '桃之夭夭，灼灼其华。之子于归，宜其室家。 人海茫茫，两颗孤独立的灵魂在时间的坐标里精准交汇。承蒙岁月厚爱，黄员超与谢家璇自此同温一盏茶，共度四季风。承蒙岁月不弃，两姓联姻，一堂缔约，良缘永结。在这良辰美景的日子里，您的到来，将为这场婚礼赋予最圆满的意义。我们备下美酒佳肴，只待与您共襄盛举，同沾喜气。')
-          h = h.replace('<p>婚礼当日，鹈鹕镇收到了一封闪闪发光的邀请函。村民们已经换好礼服，我们也准备好邀请你了。</p>', '<p>婚礼当日，鹈鹕镇收到了一封闪闪发光的邀请函。村民们已经换好礼服，我们也准备好邀请你了。</p>')
-          h = h.replace('秋风暖，星河长</p><h2>期待与你<br />共享这一份喜悦</h2>', '岁月是一场漫长的旅行，而欢聚是其中最美的风景。</p><h2>期待与你<br />共享这一份喜悦</h2>')
-          h = h.replace('<span data-content="coupleAmp">黄员超 & 谢家璇</span><strong data-content="dateDot">2026 · 11 · 01</strong>', '<span data-content="coupleAmp">黄员超 & 谢家璇</span><strong data-content="dateDot">2026 · 11 · 01</strong><p>我们人生的拼图，因为有了你们的拼凑才算得上一句“完美”。无论是从前的青葱岁月，还是未来的柴米油盐，都希望能与你们一同分享。请带上100%的好心情，带上你们最真挚的祝福，来赴这场关于爱与欢乐的盛宴吧！</p><p>黄员超 & 谢家璇 携手敬邀｜我们，不见不散！</p>')
+          h = h.replace('春去秋来，我们决定在星露谷举办一场婚礼。诚挚邀请你，来见证这一份丰收般的幸福。', '桃之夭夭，灼灼其华。之子于归，宜其室家。人海茫茫，两颗孤独立的灵魂在时间的坐标里精准交汇。承蒙岁月厚爱，黄员超与谢家璇自此同温一盏茶，共度四季风。承蒙岁月不弃，两姓联姻，一堂缔约，良缘永结。在这良辰美景的日子里，您的到来，将为这场婚礼赋予最圆满的意义。我们备下美酒佳肴，只待与您共襄盛举，同沾喜气。')
+          h = h.replace('秋风暖，星河长', '岁月是一场漫长的旅行，而欢聚是其中最美的风景。')
+          h = h.replace('</div>\n        <footer>', '</div>\n        <p class="ending-thanks">我们人生的拼图，因为有了你们的拼凑才算得上一句“完美”。无论是从前的青葱岁月，还是未来的柴米油盐，都希望能与你们一同分享。请带上100%的好心情，带上你们最真挚的祝福，来赴这场关于爱与欢乐的盛宴吧！<br />黄员超 & 谢家璇 携手敬邀｜我们，不见不散！</p>\n        <footer>')
           page.write_text(h, encoding='utf-8')
           PY
       - uses: actions/upload-pages-artifact@v3
@@ -74,5 +66,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Wait for GitHub Pages branch deployment to finish
+        run: sleep 90
       - id: deployment
         uses: actions/deploy-pages@v4
